@@ -23,36 +23,63 @@ The test suite covers the complete booking lifecycle: Authentication, Create, Ge
 ## Project Structure
 
 restful-booker-jmeter-performance-testing/
+
 │
+
 ├── scripts/
+
 │   ├── Restful-Booker Performance Test.jmx
+
 │   ├── Restful-Booker-GUI-Light-Test.jmx
+
 │   └── Restful-Booker-CLI-Load-Test.jmx
+
 │
+
 ├── data/
+
 │   └── booking_data.csv
+
 │
+
 ├── reports/
+
 │   ├── GUI/
+
 │   └── CLI/
+
 │       ├── HTML-Report/
+
 │       └── results.jtl
+
 │
+
 ├── screenshots/
+
 │   ├── GUI/
+
 │   └── CLI/
+
 │
+
 ├── docs/
+
 │   └── Restful-Booker-Performance-Test-Report.docx
+
 │
+
 └── README.md
 
 
 ## Prerequisites
-| Requirement            | Version
-| Java JDK               | 17 LTS 
-| Apache JMeter          | 5.6.3 
-| JMeter Plugins Manager | 1.10+ 
+
+ Requirement            | Version
+
+ Java JDK               | 17 LTS 
+
+ Apache JMeter          | 5.6.3 
+
+ JMeter Plugins Manager | 1.10+ 
 
 ## Setup Instructions
 
@@ -89,8 +116,7 @@ Direct JAR Download: https://jmeter-plugins.org/get/
 - PerfMon (Server Agent)
 - JSON Plugins
 
-
-## Execution Steps
+**Execution Steps**
 
 ### GUI Light Test (50 Users — Debug/Validate)
 
@@ -116,7 +142,6 @@ jmeter -n -t Restful-Booker-Performance-Test.jmx -l results.jtl -e -o html_repor
 
 | Full Load       | 200      | 120s        | 10 min 	     | CLI 
 
-
 ## Endpoints Under Test
 
 | #  | Method | Endpoint      | Auth token 
@@ -137,8 +162,7 @@ jmeter -n -t Restful-Booker-Performance-Test.jmx -l results.jtl -e -o html_repor
 
 | 08 | DELETE | /booking/{id} | ✅ 
 
-
-## Test Results Summary
+**Test Results Summary**
 
 ### GUI Test — 50 Users
 
@@ -153,7 +177,6 @@ Average Response  | 352ms
 Max Response      | 1,475ms 
 
 Throughput        | 1.9/sec 
-
 
 ### CLI Load Test — 200 Users
 
