@@ -1,10 +1,5 @@
 # Restful-Booker JMeter Performance Testing
 
-![Apache JMeter](https://img.shields.io/badge/Apache%20JMeter-5.6.3-red)
-![Status](https://img.shields.io/badge/Status-PASS-green)
-![Users](https://img.shields.io/badge/Max%20Users-200-blue)
-![Error Rate](https://img.shields.io/badge/Error%20Rate-0.03%25-brightgreen)
-
 ## Project Overview
 
 Performance and load testing suite for the Restful-Booker RESTful API (https://restful-booker.herokuapp.com) using Apache JMeter 5.6.3.
@@ -24,23 +19,19 @@ The test suite covers the complete booking lifecycle: Authentication, Create, Ge
 
 restful-booker-jmeter-performance-testing/
 
-│
 
 ├── scripts/
-
 │   ├── Restful-Booker Performance Test.jmx
 
 │   ├── Restful-Booker-GUI-Light-Test.jmx
 
 │   └── Restful-Booker-CLI-Load-Test.jmx
 
-│
 
 ├── data/
 
 │   └── booking_data.csv
 
-│
 
 ├── reports/
 
@@ -52,7 +43,6 @@ restful-booker-jmeter-performance-testing/
 
 │       └── results.jtl
 
-│
 
 ├── screenshots/
 
@@ -60,13 +50,11 @@ restful-booker-jmeter-performance-testing/
 
 │   └── CLI/
 
-│
 
 ├── docs/
 
 │   └── Restful-Booker-Performance-Test-Report.docx
 
-│
 
 └── README.md
 
