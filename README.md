@@ -6,7 +6,6 @@ Performance and load testing suite for the Restful-Booker RESTful API (https://r
 
 The test suite covers the complete booking lifecycle: Authentication, Create, Get, Full update, Partial update and Delete operations under realistic load conditions.
 
-
 ## Objectives
 
 - Validate API stability under 50 users (GUI) and 200 users (CLI)
@@ -14,6 +13,13 @@ The test suite covers the complete booking lifecycle: Authentication, Create, Ge
 - Identify performance bottlenecks and breaking points
 - Verify all endpoints meet the 2,000ms SLA threshold
 
+## Tools Used
+
+- Apache JMeter 5.6.3
+
+- JMeter Plugins Manager
+
+- Git / GitHub
 
 ## Project Structure
 ```
@@ -219,7 +225,6 @@ Throughput  | Requests per second
 
 < 0.70       | Poor ❌ 
 
-
 ## Key Findings
 
 1. API handles 200 concurrent users with 0.03% real error rate
@@ -231,13 +236,3 @@ Throughput  | Requests per second
 4. Health Check shows cold-start latency on Heroku free tier
 
 5. APDEX score of 0.954 — Excellent rating
-
-
-## Tools Used
-
-- Apache JMeter 5.6.3
-
-- JMeter Plugins Manager
-
-- Git / GitHub
-
