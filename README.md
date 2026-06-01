@@ -64,7 +64,9 @@ JMeter/
 
  JMeter Plugins Manager    | 1.10+ 
 
+
 ## Setup Instructions
+
 
 ### 1. Install Java
 ```bash
@@ -101,12 +103,14 @@ Direct JAR Download: https://jmeter-plugins.org/get/
 
 **Execution Steps**
 
+
 ### GUI Light Test (50 Users — Debug/Validate)
 
 - Open JMeter
 - File → Open → scripts/Restful-Booker-GUI-Light-Test.jmx
 - Run → Start (Ctrl + R)
 - Monitor View Results Tree
+
 
 ### CLI Load Test (200 Users — Full Load)
 ```bash
@@ -117,6 +121,7 @@ cd /path/to/apache-jmeter-5.6.3/bin
 
 jmeter -n -t Restful-Booker-Performance-Test.jmx -l results.jtl -e -o html_report
 
+
 ## Load Testing Scenarios
 
 | Scenario        | Users    | Ramp-up     | Duration        | Mode 
@@ -124,6 +129,7 @@ jmeter -n -t Restful-Booker-Performance-Test.jmx -l results.jtl -e -o html_repor
 | Light/Debug     | 50       | 60s         | 2 loops 	     | GUI 
 
 | Full Load       | 200      | 120s        | 10 min 	     | CLI 
+
 
 ## Endpoints Under Test
 
@@ -145,7 +151,9 @@ jmeter -n -t Restful-Booker-Performance-Test.jmx -l results.jtl -e -o html_repor
 
 | 08 | DELETE | /booking/{id} | ✅ 
 
+
 **Test Results Summary**
+
 
 ### GUI Test — 50 Users
 
@@ -160,6 +168,7 @@ Average Response  | 352ms
 Max Response      | 1,475ms 
 
 Throughput        | 1.9/sec 
+
 
 ### CLI Load Test — 200 Users
 
@@ -203,6 +212,7 @@ Error %     | Failed requests percentage
 
 Throughput  | Requests per second 
 
+
 ### Aggregate Report Percentiles
 
  Percentile | Meaning 
@@ -212,6 +222,7 @@ Throughput  | Requests per second
 95% Line    | Main SLA metric 
 
 99% Line    | Worst case scenario 
+
 
 ### APDEX Score Guide
 
@@ -224,6 +235,7 @@ Throughput  | Requests per second
 0.70 - 0.84  | Fair 
 
 < 0.70       | Poor ❌ 
+
 
 ## Key Findings
 
