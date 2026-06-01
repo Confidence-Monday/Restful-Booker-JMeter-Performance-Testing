@@ -21,33 +21,23 @@ restful-booker-jmeter-performance-testing/
 
 ├── scripts/
    ├── Restful-Booker Performance Test.jmx
-
    ├── Restful-Booker-GUI-Light-Test.jmx
-
    └── Restful-Booker-CLI-Load-Test.jmx
 
 ├── data/
-
    └── booking_data.csv
 
 ├── reports/
-
    ├── GUI/
-   
    └── CLI/
-
        ├── HTML-Report/
-
        └── results.jtl
 
 ├── screenshots/
-
    ├── GUI/
-
    └── CLI/
 
 ├── docs/
-
    └── Restful-Booker-Performance-Test-Report.docx
 
 └── README.md
