@@ -19,55 +19,48 @@ The test suite covers the complete booking lifecycle: Authentication, Create, Ge
 
 restful-booker-jmeter-performance-testing/
 
-
 ├── scripts/
-│   ├── Restful-Booker Performance Test.jmx
+   ├── Restful-Booker Performance Test.jmx
 
-│   ├── Restful-Booker-GUI-Light-Test.jmx
+   ├── Restful-Booker-GUI-Light-Test.jmx
 
-│   └── Restful-Booker-CLI-Load-Test.jmx
-
+   └── Restful-Booker-CLI-Load-Test.jmx
 
 ├── data/
 
-│   └── booking_data.csv
-
+   └── booking_data.csv
 
 ├── reports/
 
-│   ├── GUI/
+   ├── GUI/
+   
+   └── CLI/
 
-│   └── CLI/
+       ├── HTML-Report/
 
-│       ├── HTML-Report/
-
-│       └── results.jtl
-
+       └── results.jtl
 
 ├── screenshots/
 
-│   ├── GUI/
+   ├── GUI/
 
-│   └── CLI/
-
+   └── CLI/
 
 ├── docs/
 
-│   └── Restful-Booker-Performance-Test-Report.docx
-
+   └── Restful-Booker-Performance-Test-Report.docx
 
 └── README.md
 
-
 ## Prerequisites
 
- Requirement            | Version
+ Requirement               | Version
 
- Java JDK               | 17 LTS 
+ Java JDK                  | 17 LTS 
 
- Apache JMeter          | 5.6.3 
+ Apache JMeter             | 5.6.3 
 
- JMeter Plugins Manager | 1.10+ 
+ JMeter Plugins Manager    | 1.10+ 
 
 ## Setup Instructions
 
