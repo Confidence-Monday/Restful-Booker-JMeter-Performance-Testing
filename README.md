@@ -1,60 +1,75 @@
 # Restful-Booker JMeter Performance Testing
 
-![Apache JMeter](https://img.shields.io/badge/Apache%20JMeter-5.6.3-red)
-![Status](https://img.shields.io/badge/Status-PASS-green)
-![Users](https://img.shields.io/badge/Max%20Users-200-blue)
-![Error Rate](https://img.shields.io/badge/Error%20Rate-0.03%25-brightgreen)
-
 ## Project Overview
 
 Performance and load testing suite for the Restful-Booker RESTful API (https://restful-booker.herokuapp.com) using Apache JMeter 5.6.3.
 
 The test suite covers the complete booking lifecycle: Authentication, Create, Get, Full update, Partial update and Delete operations under realistic load conditions.
 
-
 ## Objectives
 
 - Validate API stability under 50 users (GUI) and 200 users (CLI)
+
 - Measure response times, throughput and error rates
+
 - Identify performance bottlenecks and breaking points
+
 - Verify all endpoints meet the 2,000ms SLA threshold
 
+## Tools Used
+
+- Apache JMeter 5.6.3
+
+- JMeter Plugins Manager
+
+- Git / GitHub
 
 ## Project Structure
+```
+JMeter/
 
-restful-booker-jmeter-performance-testing/
-│
 ├── scripts/
-│   ├── Restful-Booker Performance Test.jmx
-│   ├── Restful-Booker-GUI-Light-Test.jmx
-│   └── Restful-Booker-CLI-Load-Test.jmx
-│
-├── data/
-│   └── booking_data.csv
-│
-├── reports/
-│   ├── GUI/
-│   └── CLI/
-│       ├── HTML-Report/
-│       └── results.jtl
-│
-├── screenshots/
-│   ├── GUI/
-│   └── CLI/
-│
-├── docs/
-│   └── Restful-Booker-Performance-Test-Report.docx
-│
-└── README.md
 
+   ├── Restful-Booker Performance Test.jmx
+   ├── Restful-Booker-GUI-Light-Test.jmx
+   └── Restful-Booker-CLI-Load-Test.jmx
+
+├── data/
+
+   └── booking_data.csv
+
+├── reports/
+
+   ├── GUI/
+   └── CLI/
+       ├── HTML-Report/
+       └── results.jtl
+
+├── screenshots/
+
+   ├── GUI/
+   └── CLI/
+
+├── docs/
+
+   └── Restful-Booker-Performance-Test-Report.docx
+
+└── README.md
+```
 
 ## Prerequisites
-| Requirement            | Version
-| Java JDK               | 17 LTS 
-| Apache JMeter          | 5.6.3 
-| JMeter Plugins Manager | 1.10+ 
+
+ Requirement               | Version
+
+ Java JDK                  | 17 LTS 
+
+ Apache JMeter             | 5.6.3 
+
+ JMeter Plugins Manager    | 1.10+ 
+
 
 ## Setup Instructions
+
 
 ### 1. Install Java
 ```bash
@@ -89,8 +104,8 @@ Direct JAR Download: https://jmeter-plugins.org/get/
 - PerfMon (Server Agent)
 - JSON Plugins
 
+**Execution Steps**
 
-## Execution Steps
 
 ### GUI Light Test (50 Users — Debug/Validate)
 
@@ -98,6 +113,7 @@ Direct JAR Download: https://jmeter-plugins.org/get/
 - File → Open → scripts/Restful-Booker-GUI-Light-Test.jmx
 - Run → Start (Ctrl + R)
 - Monitor View Results Tree
+
 
 ### CLI Load Test (200 Users — Full Load)
 ```bash
@@ -107,6 +123,7 @@ cd /path/to/apache-jmeter-5.6.3/bin
 # Run load test
 
 jmeter -n -t Restful-Booker-Performance-Test.jmx -l results.jtl -e -o html_report
+
 
 ## Load Testing Scenarios
 
@@ -138,7 +155,8 @@ jmeter -n -t Restful-Booker-Performance-Test.jmx -l results.jtl -e -o html_repor
 | 08 | DELETE | /booking/{id} | ✅ 
 
 
-## Test Results Summary
+**Test Results Summary**
+
 
 ### GUI Test — 50 Users
 
@@ -154,33 +172,76 @@ Max Response      | 1,475ms
 
 Throughput        | 1.9/sec 
 
+Status            | ✅ PASS
+
 
 ### CLI Load Test — 200 Users
 
  Metric           | Value 
 
-Total Requests    | 9,044 
+Total Requests    | 10,024 
 
-Active Error Rate | 0.03% 
+Active Error Rate | 0.00% 
 
-Average Response  | ~300ms 
+Average Response  | ~264.93ms 
 
-Peak Throughput   | 41.9/sec 
+Median Response   | 219ms
 
-APDEX Score       | 0.954 
+90th Percentile   | 245ms
+
+95th Percentile   | 666ms
+
+99th Percentile   | 900ms
+
+Throughput        | 32.89 req/sec 
+
+APDEX Score       | 0.957 (Excellent) 
+
+Test Duration     | 5 min 11 sec
+
+FAIL              | 0
+
+Pass Rate         | 100% ✅
 
 
 ## SLA Validation
 
- Criterion   | Target     | Actual    | Status 
+ Criterion      | Target     | Actual    | Status 
  
-Error Rate   | < 1%       | 0.03%     | ✅ PASS 
+Error Rate      | < 1%       | 0.00%     | ✅ PASS 
 
-Avg Response | < 2000ms   | ~300ms    | ✅ PASS 
+Avg Response    | < 2000ms   | ~265ms    | ✅ PASS 
 
-Throughput   | > 10/s     | 41.9/s    | ✅ PASS 
+95th Percentile | < 2000ms   | 666ms     | ✅ PASS
 
-APDEX        | > 0.85     | 0.954     | ✅ PASS 
+Throughput      | > 10/s     | 32.89/s   | ✅ PASS 
+
+APDEX           | > 0.85     | 0.957     | ✅ PASS 
+
+Pass Rate       | 100%       | 100%      | ✅ PASS
+
+
+## APDEX Scores — All Endpoints
+
+ Endpoint                   | APDEX   | Rating
+
+Total                       | 0.957   | Excellent ✅
+
+01 - Health Check           | 0.903   | Good ✅
+
+02 - Get Auth Token         | 0.975   | Excellent ✅
+
+03 - Get All Bookings       | 0.964   | Excellent ✅
+
+04 - Create Booking   	    | 0.972   | Excellent ✅
+
+05 - Get Specific Booking   | 0.966   | Excellent ✅
+
+06 - Update Booking         | 0.943   | Excellent ✅
+
+07 - Partial Update         | 0.964   | Excellent ✅
+
+08 - Delete Booking         | 0.973   | Excellent ✅
 
 
 ## Report Interpretation Guide
@@ -197,6 +258,7 @@ Error %     | Failed requests percentage
 
 Throughput  | Requests per second 
 
+
 ### Aggregate Report Percentiles
 
  Percentile | Meaning 
@@ -206,6 +268,7 @@ Throughput  | Requests per second
 95% Line    | Main SLA metric 
 
 99% Line    | Worst case scenario 
+
 
 ### APDEX Score Guide
 
@@ -222,22 +285,12 @@ Throughput  | Requests per second
 
 ## Key Findings
 
-1. API handles 200 concurrent users with 0.03% real error rate
+1. API handles 200 concurrent users with 0.00% real error rate and 100% pass rate
 
-2. Average response time of ~300ms — well within 2,000ms SLA
+2. Average response time of ~265ms - 87% under the 2,000ms SLA
 
-3. Peak throughput of 41.9 req/sec at full load
+3. Peak throughput of 32.89 req/sec at full 200 user load
 
 4. Health Check shows cold-start latency on Heroku free tier
 
-5. APDEX score of 0.954 — Excellent rating
-
-
-## Tools Used
-
-- Apache JMeter 5.6.3
-
-- JMeter Plugins Manager
-
-- Git / GitHub
-
+5. APDEX score of 0.957 — Excellent rating across all endpoints
